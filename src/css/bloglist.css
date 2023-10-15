@@ -1,0 +1,55 @@
+ /*Style pour le contenu*/
+
+ .container{
+    width: 760px;
+    margin: 0 auto;
+  }
+
+  .container h1, h2{
+    text-align: center;
+  }
+
+  .blog-list{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+  
+  .blog{
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 2rem;
+  }
+  
+  .blog:hover{
+    box-shadow: 2px 1px 8px 0px rgba(0, 0, 0, 0.7);
+  }
+  
+  .blog-title{
+    color: #028bcf;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .blog-description{
+    padding: 0.5rem;
+  }
+  
+  .blog-date{
+    color: #797676;
+    font-style: italic;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+  }
+  
+  .blog-author{
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+
+  }
