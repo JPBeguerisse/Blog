@@ -23,7 +23,6 @@ function App() {
           <Route path="/new" element={<Add/>}/>
           <Route path="/list" element={<BlogList/> }/>
           <Route path="/blog/:id" element={ <BlogView /> } />
-
         </Routes>
       </>
     </Router>
