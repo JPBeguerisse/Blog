@@ -38,7 +38,7 @@ const BlogView = () => {
                     <div className="blog">
                         <h2 className="blog-title" href="">{blog.title}</h2>
                         <small className="blog-date">{`Publié le : ${blog.date}`}</small>
-                        <p className="blog-description">{blog.body}</p>
+                        <p className="blog-description">{blog.content}</p>
                         <p className="blog-author">{`Publié par : ${blog.author}`}</p>
                         {/* Affiche les détails du blog si 'blog' est défini (les données ont été chargées avec succès) */}
                         <button onClick={handleDelete}>Supprimer</button>

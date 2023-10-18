@@ -1,5 +1,6 @@
 import '../css/createblog.css';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Add = (props) => {
     /**
@@ -7,7 +8,10 @@ const Add = (props) => {
      */
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
-    const [contenue, setContenue] = useState('');
+    const [content, setContent] = useState('');
+    const [isLoading, setIsLoading] = useState(false); // si c'est true on affiche en cours de traitement
+
+    const navigate = useNavigate();
 
     const handleChangeTitle = (e) => {
         setTitle(e.target.value);
@@ -16,16 +20,32 @@ const Add = (props) => {
         setAuthor(e.target.value);
     }
     const handleChangeContenue = (e) => {
-        setContenue(e.target.value);
+        setContent(e.target.value);
+    }
+
+    //conversion de la date
+    const formatDate = (dateString) => {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString('fr-FR', options);
     }
 
     const handleAddBlog = (e) => {
-        const tmp_date = new Date().toISOString().split('T');  //récupération de la date et le convertir avec split
-        const date = `${tmp_date[0]} ${tmp_date[1]}`; //on met juste les 2 élément de notre tmp_date sur date
+        const date = formatDate(new Date());
         e.preventDefault();
-        const blog = {title, author, contenue, date}
+        const blog = {title, author, content, date}
 
         //contacter le server
+        fetch('http://localhost:8000/blogs',
+        {
+            method:'POST',
+            headers: {'Content-type':'application/json'},
+            body: JSON.stringify(blog)
+        })
+        .then(
+            console.log('Blog Ajouté avec succès'),
+            setIsLoading(false), // reviens à false après envoi des données
+            navigate('/')
+        );
     }
 
     
@@ -48,7 +68,7 @@ const Add = (props) => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="">Contenu</label>
-                        <textarea className="form-control textarea" id="" cols="30" rows="30" value={contenue} onChange={handleChangeContenue}></textarea>
+                        <textarea className="form-control textarea" id="" cols="30" rows="30" value={content} onChange={handleChangeContenue}></textarea>
                     </div>
                     <div className="form-group">
                         <button type="submit" className="btn-create">Enregistrer</button>

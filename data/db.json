@@ -3,16 +3,30 @@
     {
       "id": 1,
       "title": "Bienvenue a mon blog.",
-      "body": "Vous êtes dans mon super blog que j'ai développé en REACT. Mon premier taf avec REACT.",
+      "content": "Vous êtes dans mon super blog que j'ai développé en REACT. Mon premier taf avec REACT.",
       "author": "Junior",
       "date": "20/10/2022"
     },
     {
       "id": 2,
       "title": "La nuit des codeurs.",
-      "body": "Ce soir c'est la fête... pas de dodo mais coder jusqu'au chant de coq... hahah",
+      "content": "Ce soir c'est la fête... pas de dodo mais coder jusqu'au chant de coq... hahah",
       "author": "Jean",
       "date": "20/10/2022"
+    },
+    {
+      "title": "Parapluie",
+      "author": "Jean",
+      "content": "Je peux pas abandonné tous mes obstacles.\n",
+      "date": "17 octobre 2023",
+      "id": 4
+    },
+    {
+      "title": "ce",
+      "author": "Junior",
+      "content": "Joue ton meilleur jeux",
+      "date": "17 octobre 2023",
+      "id": 5
     }
   ]
 }

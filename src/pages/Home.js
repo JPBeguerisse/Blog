@@ -6,7 +6,7 @@ import React from "react";
 
 const Home = () => {
     // Utilisation du hook personnalisé 'useRecuperation' pour récupérer les données des blogs
-    const { data: blogsList, isLoading, error } = useRecuperation('http://localhost:8000/blogs');
+    const { data: blogsList, isLoading, error } = useRecuperation('http://localhost:8000/blogs?_sort=id&_order=desc');
 
     return (
         <div className="container">
